@@ -64,6 +64,9 @@ To check for the conditions most used to predict heart attack, we got the featur
 
 ![Screen Shot 2023-06-11 at 5 05 37 PM](https://github.com/equitymarkets/health_project_group_1/assets/114087082/82e6eccc-9cb4-4786-be3e-553f5eb2a4ed)
 
+## PCA + Random Forests
+<img width="566" alt="Screenshot 2023-06-12 at 6 36 56 PM" src="https://github.com/equitymarkets/health_project_group_1/assets/119830643/fc450762-b58b-4125-84ae-9ebf5736ff24">
+
 ## Neural Networks
 
 For the Neural Network we used the Medical Conditions data, a table containing dozens of conditions ranging from heart disease, stroke, and cancer to asthma, arthrithis, and hay fever. This also proved to be a challenge. As mentioned before, the NaN values were changed to 0 for simplicity purposes. Doing this eased the processing of the data.
