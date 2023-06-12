@@ -4,6 +4,12 @@
 
 
 ## Data Collecting (ETL)
+We examined National Health and Nutrition Examination Survey (NHANES) data from the Centers for Disease Control and Prevention (CDC). The main data set that we used was Pre-Pandemic data from 2017 to March 2020. While there are large number of surveys to use, we focused our attention primarily on two surveys: Medical Conditions and Demographics. A big challenge with this data and our project overall was the data cleaning process. The medical conditions table contained over 60 unique columns. Since there were so many columns, we first decided which columns were of most importance to our question. Once that was determined, we needed to clean all of the column names, since they were initially unique codes that provided no insight as to what the column was. 
+
+After the data table was in a readable format, our next focused turned to cleaning up the data since it had a lot of missingness. Binary columns were changed to 1 (had the diseases) 0 (did not report having the disease). Cells in columns representing the age at which someone had a specified conditions were converted to 0 if they either did not have the disease or if it fell after the age of the heart attack. A years column for each condition was added to indicate the difference between the condition age and the heart attack age. A max age column was also added to indicate the age of the condition that was closest to but still prior to the heart attack. This cleaned table was outputted to a csv file and used for further analysis.
+
+An additional table was created that contained binary columns to indicate whether or not the patient had the condition prior to the heart attack. This table was also used in the further analyses. 
+
 
 ## PCA
 * Since we are looking at many different factors to predict an outcome, it will be helpful to reduce the dimensions to provide simplicity. This will reduce accuracy but will make it easier to see the approximation of every variable.
