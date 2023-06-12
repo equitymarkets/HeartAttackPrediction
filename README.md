@@ -32,6 +32,9 @@ An additional table was created that contained binary columns to indicate whethe
 ## Logistic Regression
 When focusing on logistic regression on dataframe, we found that it is nearly impossible to predict the accuracy using logistic regression. First of all, the dataset was not complete, there is a huge missing factor on heart_attack_age (y values), which the value '0' was used to subsitute. Logistic Regression is good with relationship if the features, and target are not complex.
 
+<img width="468" alt="Screen Shot 2023-06-12 at 6 18 59 PM" src="https://github.com/equitymarkets/health_project_group_1/assets/120348065/bcb17e68-6d97-430b-be4e-457cdaba385c">
+
+
 ## Random Forests 
 We also used a Random Forest Classifier on the binary data, which is 1 if they had the condition before the heart attack and 0 if they did not. We first ran our model on the baseline hyper-parameters to see where the model would be at.  Below, we show the confusion matrix, accuracy score, and classification report. 
 
