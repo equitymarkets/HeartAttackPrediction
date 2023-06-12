@@ -1,7 +1,10 @@
 # Heart Attack Prediction with Machine Learning Models
 
-## We have examined heart attack prediction factors including: 
-
+## We have examined heart attack prediction factors including, but not limited to: 
+* If an individual was diagnosed with asthma
+* If an individual was ever overweight
+* If an individual ever had a stroke
+* If an individual was ever a smoker
 
 ## Data Collecting (ETL)
 We examined National Health and Nutrition Examination Survey (NHANES) data from the Centers for Disease Control and Prevention (CDC). The main data set that we used was Pre-Pandemic data from 2017 to March 2020. While there are large number of surveys to use, we focused our attention primarily on two surveys: Medical Conditions and Demographics. A big challenge with this data and our project overall was the data cleaning process. The medical conditions table contained over 60 unique columns. Since there were so many columns, we first decided which columns were of most importance to our question. Once that was determined, we needed to clean all of the column names, since they were initially unique codes that provided no insight as to what the column was. 
@@ -11,12 +14,18 @@ After the data table was in a readable format, our next focused turned to cleani
 An additional table was created that contained binary columns to indicate whether or not the patient had the condition prior to the heart attack. This table was also used in the further analyses. 
 
 
-## PCA
+## Primary Component Analysis (PCA)
 * Since we are looking at many different factors to predict an outcome, it will be helpful to reduce the dimensions to provide simplicity. This will reduce accuracy but will make it easier to see the approximation of every variable.
-* We hope to reduce our data to only two dimensions 
+* We hope to reduce our data to only two dimensions so we set n_components in our pca function to 2.
 * There is a lot of variance within each of our variables, we want to simplify and create bigger, more meaningful features
-* Using PCA we find three clusters, which we can then use to categorize individuals based on certain traits
-* We find there are three clusters, which here means groups that have certain characteristics
+* Using the explained_variance_ratio_ function we find the first primary component explains 33% of the variance, the second primary component explains 31%. These are relatively low because a large amount of the data is binary.
+* We are also able to determine which variables are the most important for each component using the components_ function. 
+![image](https://github.com/equitymarkets/health_project_group_1/assets/65323795/e5be57b2-d503-4b51-ac23-56062ef5105f)
+  * We found for the first primary component, total cholesterol is the variable with the most variance.
+  * For the second primary component, the number of drinks per day is the most important variable. 
+ ![image](https://github.com/equitymarkets/health_project_group_1/assets/65323795/22fe02f1-e3af-4852-9472-9ba5bae4e1e8)
+* With K-means clustering, we can identify that 3 is the optimal number of clustering.
+* We can then use these clusters to categorize individuals based on certain traits. Each group means those in the same group have similar characteristics. 
 ![bokeh_plot](https://github.com/equitymarkets/health_project_group_1/assets/65323795/e3007c9f-98e7-4e27-a5b2-36f22d4a893e)
 * Gives an overall more simplistic view of our data
 
@@ -28,7 +37,7 @@ We also used a Random Forest Classifier on the binary data, which is 1 if they h
 
 ![Screen Shot 2023-06-11 at 4 37 24 PM](https://github.com/equitymarkets/health_project_group_1/assets/114087082/c520714a-703c-4576-8104-885ecddf3073)
 
-While we do have a high accuracy score, you can see from the confusion matrix that this model is really bad at predicting people with heart attacks, with it missing on 70 people. This can be explained by the fact that the data has a big class imbalance, as people with heart attacks only make up about 5% of our data. With this class imbalance, our model was not learning from the features and treating heart attacks as a rare occurrence. To solve this problem, we decided to down sample our non-heart attack class, so that the heart attack people make up more of the data. We also tuned our hyper-parameters with RandomizedSearchCV() and GridSearchCV() to get the best model for the data. 
+While we do have a high accuracy score, you can see from the confusion matrix that this model is really bad at predicting people with heart attacks, with it missing on 107 people. This can be explained by the fact that the data has a big class imbalance, as people with heart attacks only make up about 5% of our data. With this class imbalance, our model was not learning from the features and treating heart attacks as a rare occurrence. To solve this problem, we decided to down sample our non-heart attack class, so that the heart attack people make up more of the data. We also tuned our hyper-parameters with RandomizedSearchCV() and GridSearchCV() to get the best model for the data. 
 
 First, we downsized the data so that the non-heart attack group and heart attack group had a ratio of 2:1. We, then, split the data into training and testing sets and applied RandomizedSearchCV() with a range of different hyper-parameters. After that, we predicted the training set, and its results are shown below. 
 
@@ -44,7 +53,7 @@ We wanted to check if there was any biases from the model, so we decided to use 
 
 ![Screen Shot 2023-06-11 at 5 06 52 PM](https://github.com/equitymarkets/health_project_group_1/assets/114087082/c02cda9e-5a63-4199-ad31-d44fcec70561)
 
-The total results shown are similar to the testing results, so we can say that there were no biases in our smaller data set. From here, we also wanted to test this model with data from a different year, so we applied the model to data from the years 2015-2016. The results from applying that model is shown below.
+The total results shown are similar to the testing results, and we see that the the precision for heart attack is lower than the down sample. Thus, there might be a little bias within the model. From here, we also wanted to test this model with data from a different year, so we applied the model to data from the years 2015-2016. The results from applying that model is shown below.
 
 ![Screen Shot 2023-06-11 at 5 07 57 PM](https://github.com/equitymarkets/health_project_group_1/assets/114087082/e71c0d4f-7357-44cb-b0c8-006901ca60fb)
 
