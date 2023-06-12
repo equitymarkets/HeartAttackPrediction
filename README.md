@@ -16,8 +16,8 @@ An additional table was created that contained binary columns to indicate whethe
 
 ## Primary Component Analysis (PCA)
 * Since we are looking at many different factors to predict an outcome, it will be helpful to reduce the dimensions to provide simplicity. This will reduce accuracy but will make it easier to see the approximation of every variable.
+* There is a lot of variance within each of our variables, we want to simplify and create bigger, more meaningful features.
 * We hope to reduce our data to only two dimensions so we set n_components in our pca function to 2.
-* There is a lot of variance within each of our variables, we want to simplify and create bigger, more meaningful features
 * Using the explained_variance_ratio_ function we find the first primary component explains 33% of the variance, the second primary component explains 31%. Together they only explain 64% of the total variance. These values are relatively low because a large amount of the data is binary.
 * We are also able to determine which variables are the most important for each component using the components_ function. 
 ![image](https://github.com/equitymarkets/health_project_group_1/assets/65323795/e5be57b2-d503-4b51-ac23-56062ef5105f)
