@@ -1,6 +1,6 @@
-# health_project_group_1
+# Heart Attack Prediction with Machine Learning Models
 
-## we examine heart attack prediction factors including: 
+## We have examined heart attack prediction factors including: 
 
 
 ## Data Collecting (ETL)
