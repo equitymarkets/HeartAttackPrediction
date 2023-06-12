@@ -54,7 +54,11 @@ To check for the conditions most used to predict heart attack, we got the featur
 
 ## Neural Networks
 
-For the Neural Network we ran used the Medical Conditions data, a table containing many conditions ranging from heart disease, stroke, and cancer to asthma, arthrithis, and hay fever. This also proved to be a challenge. As mentioned before, the NaN values were changed to 0 for simplicity purposes. Doing this eased the processing of the data.
+For the Neural Network we used the Medical Conditions data, a table containing dozens of conditions ranging from heart disease, stroke, and cancer to asthma, arthrithis, and hay fever. This also proved to be a challenge. As mentioned before, the NaN values were changed to 0 for simplicity purposes. Doing this eased the processing of the data.
+
+The data was first further cleaned, with removal columns that have no value in the analysis, such as the ID number. Then the x and y values were choses, y being the target, in this case Heart Attack, and X being a set of variables to test for in the model, or features, to try to predict whether or not heart attacks could be predicted. 
+
+Upon starting the analysis, excessive accuracy was recorded, with values of up to 100% on the second or third epoch. There seemed to be either data leaking or overfitting, or perhaps there was an error in the model. 
 
 ![loss](https://github.com/equitymarkets/health_project_group_1/assets/49753517/42fc65fc-d61d-40f3-8da2-77d0ac0eaffb)
 
