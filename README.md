@@ -56,9 +56,19 @@ To check for the conditions most used to predict heart attack, we got the featur
 
 For the Neural Network we used the Medical Conditions data, a table containing dozens of conditions ranging from heart disease, stroke, and cancer to asthma, arthrithis, and hay fever. This also proved to be a challenge. As mentioned before, the NaN values were changed to 0 for simplicity purposes. Doing this eased the processing of the data.
 
-The data was first further cleaned, with removal columns that have no value in the analysis, such as the ID number. Then the x and y values were choses, y being the target, in this case Heart Attack, and X being a set of variables to test for in the model, or features, to try to predict whether or not heart attacks could be predicted. 
+The data was first further cleaned, with removal columns that have no value in the analysis, such as the ID number. The get_dummies function was used to turn existing non-binary columns into binary. Then the x and y values were chosen, y being the target, in this case Heart Attack, and X being a set of variables to test for in the model, or features, to try to predict whether or not heart attacks could be predicted. 
+
+The data was then scaled.
+
+After scaling we were ready to set up the model. The amount of layers, neurons in each layer, and activation functions were chosen. 
+
+We then compiled the data. 
+
+Finally, the models were run by choosing the amount of epochs and training the model. 
 
 Upon starting the analysis, excessive accuracy was recorded, with values of up to 100% on the second or third epoch. There seemed to be either data leaking or overfitting, or perhaps there was an error in the model. 
+
+We first tried to analyze the actual inputs by creating a csv and checking the data. We cut additional inputs from the features, to ensure that we were not leaking the data. We inserted a function for early stopping. Still, high levels of accuracy remained. 
 
 ![loss](https://github.com/equitymarkets/health_project_group_1/assets/49753517/42fc65fc-d61d-40f3-8da2-77d0ac0eaffb)
 
