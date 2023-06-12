@@ -21,8 +21,9 @@ An additional table was created that contained binary columns to indicate whethe
 * Using the explained_variance_ratio_ function we find the first primary component explains 33% of the variance, the second primary component explains 31%. These are relatively low because a large amount of the data is binary.
 * We are also able to determine which variables are the most important for each component using the components_ function. 
 ![image](https://github.com/equitymarkets/health_project_group_1/assets/65323795/e5be57b2-d503-4b51-ac23-56062ef5105f)
-  * We found for the first primary component, total cholesterol is the variable with the most variance.
+  * We found for the first primary component, total cholesterol is the most important variable.
   * For the second primary component, the number of drinks per day is the most important variable. 
+   * The importance of each variable is defined by how much feature contributes to the primary component. 
  ![image](https://github.com/equitymarkets/health_project_group_1/assets/65323795/22fe02f1-e3af-4852-9472-9ba5bae4e1e8)
 * With K-means clustering, we can identify that 3 is the optimal number of clustering.
 * We can then use these clusters to categorize individuals based on certain traits. Each group means those in the same group have similar characteristics. 
