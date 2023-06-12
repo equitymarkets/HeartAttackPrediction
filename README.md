@@ -53,7 +53,7 @@ We wanted to check if there was any biases from the model, so we decided to use 
 
 ![Screen Shot 2023-06-11 at 5 06 52 PM](https://github.com/equitymarkets/health_project_group_1/assets/114087082/c02cda9e-5a63-4199-ad31-d44fcec70561)
 
-The total results shown are similar to the testing results, and we see that the the precision for heart attack is lower than the down sample. Thus, there might be a little bias within the model. From here, we also wanted to test this model with data from a different year, so we applied the model to data from the years 2015-2016. The results from applying that model is shown below.
+The total results shown are some what similar to the testing results, and we see that the the precision for heart attack is lower than the down sample. Thus, there might be a little bias within the model. From here, we also wanted to test this model with data from a different year, so we applied the model to data from the years 2015-2016. The results from applying that model is shown below.
 
 ![Screen Shot 2023-06-11 at 5 07 57 PM](https://github.com/equitymarkets/health_project_group_1/assets/114087082/e71c0d4f-7357-44cb-b0c8-006901ca60fb)
 
