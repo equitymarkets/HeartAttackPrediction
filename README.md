@@ -70,6 +70,14 @@ Upon starting the analysis, excessive accuracy was recorded, with values of up t
 
 We first tried to analyze the actual inputs by creating a csv and checking the data. We cut additional inputs from the features, to ensure that we were not leaking the data. We inserted a function for early stopping. Still, high levels of accuracy remained. 
 
+Here we have the loss on each epoch when running the model 100 times: 
+
 ![loss](https://github.com/equitymarkets/health_project_group_1/assets/49753517/42fc65fc-d61d-40f3-8da2-77d0ac0eaffb)
 
+Here we have the accuracy on each epoch when running this same model:
+
 ![accuracy](https://github.com/equitymarkets/health_project_group_1/assets/49753517/0970a77f-f0c0-4997-a676-f4a2f9f11269)
+
+After the training it was time to analyze the model's results. A rough accuracy score of .9725 was recorded using the model. 
+
+Now it was time to tune the model. Using the keras sequential model to tune for hyperparameters, we found the ideal parameters to be  
