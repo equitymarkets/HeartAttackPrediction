@@ -32,6 +32,8 @@ An additional table was created that contained binary columns to indicate whethe
 ## Logistic Regression
 When focusing on logistic regression on dataframe, we found that it is nearly impossible to predict the accuracy using logistic regression. First of all, the dataset was not complete, there is a huge missing factor on heart_attack_age (y values), which the value '0' was used to subsitute. Logistic Regression is good with relationship if the features, and target are not complex.
 
+For the model, the outcome came out with the accuracy of 96% which is relatively high for predicting the whether or not if a person has a chance of getting heart attack with existing conditions. 
+
 <img width="468" alt="Screen Shot 2023-06-12 at 6 18 59 PM" src="https://github.com/equitymarkets/health_project_group_1/assets/120348065/bcb17e68-6d97-430b-be4e-457cdaba385c">
 
 
