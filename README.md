@@ -42,7 +42,7 @@ We also used a Random Forest Classifier on the binary data, which is 1 if they h
 
 While we do have a high accuracy score, you can see from the confusion matrix that this model is really bad at predicting people with heart attacks, with it missing on 107 people. This can be explained by the fact that the data has a big class imbalance, as people with heart attacks only make up about 5% of our data. With this class imbalance, our model was not learning from the features and treating heart attacks as a rare occurrence. To solve this problem, we decided to down sample our non-heart attack class, so that the heart attack people make up more of the data. We also tuned our hyper-parameters with RandomizedSearchCV() and GridSearchCV() to get the best model for the data. 
 
-First, we downsized the data so that the non-heart attack group and heart attack group had a ratio of 2:1. We, then, split the data into training and testing sets and applied RandomizedSearchCV() with a range of different hyper-parameters. After that, we predicted the training set, and its results are shown below. 
+First, we downsized the data so that the non-heart attack group and heart attack group had a ratio of 2:1. We, then, split the data into training and testing sets and applied RandomizedSearchCV() with a range of different hyper-parameters. After that, we predicted the testing set, and its results are shown below. 
 
 ![Screen Shot 2023-06-11 at 4 56 07 PM](https://github.com/equitymarkets/health_project_group_1/assets/114087082/a879bb36-721e-48f1-b54f-4692984b5f56)
 
