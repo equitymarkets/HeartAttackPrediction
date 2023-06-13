@@ -72,9 +72,9 @@ To check for the conditions most used to predict heart attack, we got the featur
 
 ## Neural Networks
 
-For the Neural Network we used the Medical Conditions data, a table containing dozens of conditions ranging from heart disease, stroke, and cancer to asthma, arthrithis, and hay fever. This also proved to be a challenge. As mentioned before, the NaN values were changed to 0 for simplicity purposes. This eased the process of both cleaning and analysis. Since most of our values were NaN, 0 was effectively the mode of the data and better number to use than the mean or median. 
+For the Neural Network we used the Medical Conditions data, a table containing dozens of conditions ranging from heart disease, stroke, and cancer to asthma, arthrithis, and hay fever. This also proved to be a challenge. As mentioned before, the NaN values were changed to 0 for simplicity purposes. This eased the process of both cleaning and analysis. since most of our values were NaN, 0 was effectively the mode of the data and better number to use than the mean or median. 
 
-The data was first further cleaned, with removal columns that have no value in the analysis, such as the ID number. The get_dummies function was used to turn existing non-binary columns into binary. Then the x and y values were chosen, y being the target, in this case Heart Attack, and X being a set of variables to test for in the model, or features, to try to predict whether or not heart attacks could be predicted. 
+The data was first further cleaned, with removal columns that have no value in the analysis, such as the ID number. The get_dummies function was used to turn existing non-binary columns into binary. Then the X and y values were chosen, y being the target, in this case Heart Attack, and X being a set of variables to test for in the model, or features, to try to predict whether or not heart attacks could be predicted. 
 
 The data was then scaled.
 
@@ -88,15 +88,21 @@ Upon starting the analysis, excessive accuracy was recorded, with values of up t
 
 We first tried to analyze the actual inputs by creating a csv and checking the data. We cut additional inputs from the features, to ensure that we were not leaking the data. We inserted a function for early stopping. Still, high levels of accuracy remained. 
 
-
-The problem was an imbalanced data set. We ended up splitting the data into x and y training and testing sets, splitting heart attacks over the max age (age when first health event was diagnosed) and heart attacks where they were the first health event. We removed more categories. We scaled the data and finally, put all of the sets back together before compilation. 
-After the training it was time to analyze the model's results. A rough accuracy score of 99% was recorded using the model. Precion, which is the fraction of relevant instances among the retrieved instances, is  .84. Recall, which is  is the fraction of relevant instances that were retrieved, was 1.0. This doesn not imply that for a model with a much larger set could predict heart attacks 100% of the time, but does imply that this model may be worth pursuing in the future, and we look forward to possibly doing that. 
-Here we have the loss on each epoch when running the model 75 times: 
+Here we have the loss on each epoch when running the first model 75 times: 
 
 ![loss](https://github.com/equitymarkets/health_project_group_1/assets/49753517/42fc65fc-d61d-40f3-8da2-77d0ac0eaffb)
 
 Here we have the accuracy on each epoch when running this same model:
 
 ![accuracy](https://github.com/equitymarkets/health_project_group_1/assets/49753517/0970a77f-f0c0-4997-a676-f4a2f9f11269)
+
+The problem was an imbalanced data set. We ended up splitting the data into x and y training and testing sets, splitting heart attacks over the max age (age when first health event was diagnosed) and heart attacks where they were the first health event. We removed more categories. We scaled the data and finally, put all of the sets back together before compilation. 
+After the training it was time to analyze the model's results. A rough accuracy score of 99% was recorded using the model. Precision, which is the fraction of relevant instances among the retrieved instances, is .84. Recall, which is  is the fraction of relevant instances that were retrieved, was 1.0. This doesn not imply that for a model with a much larger set could predict heart attacks 100% of the time, but does imply that this model may be worth pursuing in the future, and we look forward to possibly doing that.
+
+Here we have both graphs after then optimization:
+
+![loss2](https://github.com/equitymarkets/health_project_group_1/assets/49753517/34675183-4de7-4557-b708-0d2605a766a8)
+
+![accuracy2](https://github.com/equitymarkets/health_project_group_1/assets/49753517/83015654-f30d-4a70-bfc3-b70520afca0a)
 
 In conclusion, the neural network seems to show some promise in predicting heart attacks. More analysis would be required, along with tuning for hyperparameters and adding additional data, to effectively replicate this model on bigger datasets. 
